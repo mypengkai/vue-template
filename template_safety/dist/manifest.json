@@ -1,0 +1,239 @@
+{
+    "@platforms": ["android", "iPhone", "iPad"],
+    "id": "H52993354",/*应用的标识，创建应用时自动生成，勿手动修改*/
+    "name": "安全巡检",/*应用名称，程序桌面图标名称*/
+    "version": {
+        "name": "1.2",/*应用版本名称*/
+        "code": ""
+    },
+    "description": "",/*应用描述信息*/
+    "icons": {
+        "72": "icon.png"
+    },
+    "launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "developer": {
+        "name": "",/*开发者名称*/
+        "email": "",/*开发者邮箱地址*/
+        "url": ""/*开发者个人主页地址*/
+    },
+    "permissions": {
+        "Messaging":{
+        	"description": "短彩邮件插件"
+        },
+        "Cache": {
+            "description": "管理应用缓存"
+        },
+        "Console": {
+            "description": "跟踪调试输出日志"
+        },
+        "Contacts": {
+            "description": "访问系统联系人信息"
+        },
+        "Events": {
+            "description": "应用扩展事件"
+        },
+        "Maps": {
+            "description": "管理地图插件"
+        },
+        "Speech": {
+            "description": "管理语音识别插件"
+        },"Push":{}
+    },
+    "plus": {
+        "splashscreen": {
+            "autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+            "waiting": true/*是否在程序启动界面显示等待雪花，true表示显示，false表示不显示。*/
+        },
+        "popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
+        "runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+        "signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
+        "distribute": {"plugins":{"push":{"igexin":{"appid":"NwP5Dxyp228JTsZp2Nlh77","appkey":"wFb1y6XhtJ8DAYGko7U6z6","appsecret":"T4wSDWFLPs9MOM6gLakfm8"}}},
+            "apple": {
+                "appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+                "mobileprovision": "",/*iOS应用打包配置文件*/
+                "password": "",/*iOS应用打包个人证书导入密码*/
+                "p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+                "devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+                "frameworks":[
+                ]/*调用Native.js调用原生Objective-c API需要引用的FrameWork，如需调用GameCenter，则添加"GameKit.framework"*/
+            },
+            "google": {
+                "packagename": "",/*Android应用包名，如io.dcloud.HelloH5*/
+                "keystore": "",/*Android应用打包使用的密���库文件*/
+                "password": "",/*Android应用打包使用密钥库中证书的密码*/
+                "aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
+               "permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.SYSTEM_ALERT_WINDOW\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.INTERNET\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"]
+				/*使用Native.js调用原生安卓API需要使用到的系统权限*/
+            },
+            "orientation": [
+                "portrait-primary"
+            ],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+            "icons": {
+                "ios": {
+                    "prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+                     /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+                    "iphone": {
+                        "normal": "", /*iPhone3/3GS程序图标，分辨率：57x57*/
+                        "retina": "", /*iPhone4程序图标，分辨率：114x114*/
+                         /*iPhone4S/5/6程序图标，分辨率：120x120*/
+			 /*iPhone6 Plus程序图标，分辨率：180x180*/
+                        "spotlight-normal": "", /*iPhone3/3GS Spotlight搜索程序图标，分辨率：29x29*/
+                        "spotlight-retina": "", /*iPhone4 Spotlight搜索程序图标，分辨率：58x58*/
+                         /*iPhone4S/5/6 Spotlight搜索程序图标，分辨率：80x80*/
+                        "settings-normal": "", /*iPhone4设置页面程序图标，分辨率：29x29*/
+                         /*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
+			"app@2x":"unpackage/res/icons/120x120.png","app@3x":"unpackage/res/icons/180x180.png","settings@3x":"unpackage/res/icons/87x87.png","settings@2x":"unpackage/res/icons/58x58.png","spotlight@2x":"unpackage/res/icons/80x80.png","spotlight@3x":"unpackage/res/icons/120x120.png","notification@3x":"unpackage/res/icons/60x60.png","notification@2x":"unpackage/res/icons/40x40.png" /*iPhone6Plus设置页面程序图标，分辨率：87x87*/
+                    },
+                    "ipad": {
+                        "normal": "", /*iPad普通屏幕程序图标，分辨率：72x72*/
+                        "retina": "", /*iPad高分屏程序图标，分辨率：144x144*/
+                         /*iPad iOS7程序图标，分辨率：76x76*/
+                         /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+                        "spotlight-normal": "", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+                        "spotlight-retina": "", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+                        /*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+                        /*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+                        /*iPad设置页面程序图标，分辨率：29x29*/
+                        "app":"unpackage/res/icons/76x76.png","app@2x":"unpackage/res/icons/152x152.png","settings":"unpackage/res/icons/29x29.png","proapp@2x":"unpackage/res/icons/167x167.png","spotlight":"unpackage/res/icons/40x40.png","settings@2x":"unpackage/res/icons/58x58.png","spotlight@2x":"unpackage/res/icons/80x80.png","notification":"unpackage/res/icons/20x20.png","notification@2x":"unpackage/res/icons/40x40.png" /*iPad高分屏设置页面程序图标，分辨率：58x58*/
+                    },"appstore":"unpackage/res/icons/1024x1024.png"
+                },
+                "android": {
+                    "mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+                    "ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+                    "hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+                    "xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+                    "xxhdpi": "unpackage/res/icons/144x144.png","xxxhdpi":"unpackage/res/icons/192x192.png"/*1080P 高分屏程序图标，分辨率：144x144*/
+                }
+            },
+            "splashscreen": {
+                "ios": {
+                    "iphone": {
+                        "default": "", /*iPhone3启动图片选，分辨率：320x480*/
+                        "retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+                        "retina40": "",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+                        "retina47": "",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+                        "retina55": "",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+                        "retina55l": ""/*5.5 英寸设备(iPhone6 Plus)横屏启动图片，分辨率：2208x1242*/
+                    },
+                    "ipad": {
+                        "portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
+                        "portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+                        "landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
+                        "landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+                        "portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+                        "portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+                        "landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+                        "landscape-retina7": ""/*iPad iOS7高分屏横屏启动图片，分辨率：2048x1536*/
+                    }
+                },
+                "android": {
+                    "mdpi": "", /*普通屏启动图片，分辨率：240x282*/
+                    "ldpi": "", /*大屏启动图片，分辨率：320x442*/
+                    "hdpi": "", /*高分屏启动图片，分辨率：480x762*/
+                    "xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
+                    "xxhdpi": ""/*1080P高分屏启动图片，分辨率：1080x1882*/
+                }
+            }
+        }
+    },
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"static/css/app.0740c2c9ff8e820b20e10e182d12536c.css",
+					"static/css/app.559246d2ce931930a4e8bd518b19c0e5.css",
+					"static/js/manifest.f747e17113e13b624201.js",
+					"static/js/app.8f69e074e258a788a010.js",
+					"static/js/manifest.b143f2884b614fcaff99.js",
+					"static/css/app.f703b2dbd9d72d363235f011262e2faa.css",
+					"static/js/app.28811f7b5b67f2558fc1.js",
+					"static/css/app.e68b26853988922faee29bb44f761031.css",
+					"static/css/app.d24017c7afcb723717d105b9477dede8.css",
+					"static/js/vendor.f47783bf40db21b9d470.js",
+					"static/js/manifest.24d2b48eaf4e77fdac28.js",
+					"static/js/app.8f93d8c2aa2dc291464d.js",
+					"static/js/vendor.e85d430b0e86b1a6cfb8.js",
+					"static/js/manifest.45d6ff9828a9bddd85c3.js",
+					"static/css/app.1365ada4e88880aecb9000f4e2548df9.css",
+					"static/js/app.0e2b57c0993b1f594d39.js",
+					"static/js/manifest.c97d61ed013260c4e430.js",
+					"static/js/app.e892d4afa6c89a6d477c.js",
+					"static/css/app.895ea7b09a51a816cad62243df9850ab.css",
+					"static/js/vendor.b417b1295bb4f596e454.js",
+					"static/css/app.7da9270ba0c2bbf947a8fd112f2311fb.css",
+					"static/js/vendor.22621742a4ebccc7eec8.js",
+					"static/js/app.1f1fa9dbd71c5345ad17.js",
+					"static/js/vendor.d0ba18d0a81ed282d987.js",
+					"static/js/app.7194402a39dc8b3e82c4.js",
+					"static/js/manifest.cfabf70c0e76a33946fe.js",
+					"static/js/app.b0d6c9800f65b40cccf3.js"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"static/js/25.ee23e131d4f745c61796.js",
+				"static/js/4.4809f0f67216408586d0.js",
+				"static/js/24.9bbd0bbd6a423b1295a5.js.map",
+				"static/js/15.1df47c9b80026f839d1a.js.map",
+				"static/js/5.2af489670d0898756ef7.js.map",
+				"static/js/15.1df47c9b80026f839d1a.js",
+				"static/js/21.ef48d4a78fc7e9a42ca6.js",
+				"static/js/24.9bbd0bbd6a423b1295a5.js",
+				"static/js/3.5858ca41dc4200fd2f34.js",
+				"static/js/19.0546e1ef1f42d089ebb8.js",
+				"static/js/vendor.899a6200a1960aaeb14c.js",
+				"static/js/2.942478067635eb1c532d.js.map",
+				"static/js/21.ef48d4a78fc7e9a42ca6.js.map",
+				"static/js/9.1581ac26ee580bed610a.js",
+				"static/img/shtoone.abad818.png",
+				"static/js/18.5114578a5c51388fedc5.js.map",
+				"static/js/11.976450ae10b2ee1f78e9.js.map",
+				"static/js/manifest.34a67494a99fe95f4368.js",
+				"static/js/16.c998ffaa2f9e6766d23c.js.map",
+				"static/js/19.0546e1ef1f42d089ebb8.js.map",
+				"static/js/12.1514ed0a9ccbca32d4b8.js.map",
+				"static/js/app.91a168b4fbecc038abd6.js",
+				"static/js/app.91a168b4fbecc038abd6.js.map",
+				"static/js/manifest.34a67494a99fe95f4368.js.map",
+				"static/js/9.1581ac26ee580bed610a.js.map",
+				"static/js/8.96a6dc0550b1abd49aad.js",
+				"static/js/22.8df76c99c63b3dc706fa.js.map",
+				"static/js/8.96a6dc0550b1abd49aad.js.map",
+				"static/js/22.8df76c99c63b3dc706fa.js",
+				"static/js/7.bcf1bf54e6154d8b9c09.js",
+				"static/js/17.e9c73a6984cb473cb4c9.js.map",
+				"static/js/25.ee23e131d4f745c61796.js.map",
+				"static/js/4.4809f0f67216408586d0.js.map",
+				"static/js/12.1514ed0a9ccbca32d4b8.js",
+				"static/js/2.942478067635eb1c532d.js",
+				"static/js/10.fa7e271e34732fdf7415.js",
+				"static/js/11.976450ae10b2ee1f78e9.js",
+				"static/js/23.0cfaabcc9c218ddb8521.js.map",
+				"static/js/3.5858ca41dc4200fd2f34.js.map",
+				"static/js/18.5114578a5c51388fedc5.js",
+				"static/js/20.c653b523df46a0228697.js",
+				"static/js/10.fa7e271e34732fdf7415.js.map",
+				"static/js/vendor.899a6200a1960aaeb14c.js.map",
+				"static/js/17.e9c73a6984cb473cb4c9.js",
+				"static/js/23.0cfaabcc9c218ddb8521.js",
+				"static/js/0.43ee15bb66a8a622de49.js",
+				"static/js/5.2af489670d0898756ef7.js",
+				"static/js/6.8c0f6bd293c4d5148d6f.js",
+				"static/js/26.dd6a6cc46d11866d1372.js.map",
+				"static/js/16.c998ffaa2f9e6766d23c.js",
+				"static/js/0.43ee15bb66a8a622de49.js.map",
+				"static/js/1.e12fdeb27e71c7d3d1b7.js",
+				"static/js/20.c653b523df46a0228697.js.map",
+				"static/js/6.8c0f6bd293c4d5148d6f.js.map",
+				"static/js/26.dd6a6cc46d11866d1372.js",
+				"static/css/app.0740c2c9ff8e820b20e10e182d12536c.css.map",
+				"static/js/7.bcf1bf54e6154d8b9c09.js.map",
+				"static/js/1.e12fdeb27e71c7d3d1b7.js.map",
+				"static/img/swiper.a58f56c.jpg"
+			]
+		}
+	}
+}
