@@ -13,14 +13,7 @@
         </van-col>
       </van-row>
       <div class="upload">
-        <van-uploader
-          :after-read="afterRead"
-          v-model="fileList"
-          multiple
-          :max-count="3"
-          capture="camera"
-          preview-size="70px"
-        />
+        <Attach :attachList="fileList.files" :readonly="false" :uploadFileOption="fileList.type" @uploadCallback="getCallback"></Attach>
       </div>
     </div>
   </div>
@@ -29,10 +22,15 @@
 import self from "@/api/self";
 export default {
   props: ["list", "subscript"],
+  components:{
+    Attach:()=>import("./Attach.vue")
+  },
   data() {
     return {
-      fileList: [],
-      type: "SafetyPatrol", // 安全
+      fileList: {
+          type: "SafetyPatrol", // 安全
+          files:[]
+      },
       conentObj: {
         sphdid: "", // 隐患id
         spContent: "", // 隐患名称
@@ -48,22 +46,10 @@ export default {
     this.conentObj.hdGrade = this.list[0].hdGrade;
   },
   methods: {
-    afterRead(file) {
-      let formData = new FormData();
-      formData.append("type", this.type);
-      if (file.length > 0) {
-        for (let key of file) {
-          formData.append("file", key.file);
-        }
-      } else {
-        formData.append("file", file.file);
-      }
-      self.uploadFile(formData).then(res => {
-        if (res.data.success == 0) {
-          this.conentObj.fileId = res.data.obj;
-        }
-      });
-    }
+    getCallback(data){
+         data = eval("(" + data + ")");
+         this.conentObj.fileId += data.obj + ","
+    },
   }
 };
 </script>
@@ -79,7 +65,7 @@ export default {
   border-bottom: 1px solid #ccc;
 }
 .upload {
-  margin: 10px 20px;
+  margin: 10px;
 }
 .van-radio {
   display: -webkit-box;

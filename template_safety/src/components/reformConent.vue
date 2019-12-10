@@ -36,14 +36,7 @@
             </template>
           </van-cell>
         </van-cell-group>
-        <van-uploader
-          v-model="fileList"
-          capture="camera"
-          multiple
-          :max-count="3"
-          :after-read="afterRead"
-          preview-size="70"
-        />
+        <Attach :attachList="fileList.files" :readonly="false" :uploadFileOption="fileList.type" @uploadCallback="getCallback"></Attach>
         <van-button type="info" size="large" @click="save">提交保存</van-button>
       </div>
     </van-cell-group>
@@ -55,13 +48,12 @@ import reform from "@/api/reform";
 export default {
   props: ["list", "subscript", "id"],
   components: {
-    reformLoop: () => import("./reformLoop.vue")
+    reformLoop: () => import("./reformLoop.vue"),
+    Attach:()=>import("./Attach.vue")
   },
   inject: ["reload"],
   data() {
     return {
-      type: "SafetyReply", // 安全
-      fileList: [], // 图片预览
       sendData: {
         id: "", //安全巡检id
         replayUserId: "", // 回复人id
@@ -71,25 +63,17 @@ export default {
         replayState: 0,
         replayContent: "", // 整改内容
         filesId: "" // 文件id
+      },
+      fileList: {
+        files: [],
+        type: "SafetyPatrol" // 安全
       }
     };
   },
   methods: {
-    afterRead(file) {
-      let formData = new FormData();
-      formData.append("type", this.type);
-      if (file.length > 0) {
-        for (let key of file) {
-          formData.append("file", key.file);
-        }
-      } else {
-        formData.append("file", file.file);
-      }
-      self.uploadFile(formData).then(res => {
-        if (res.data.success == 0) {
-          this.sendData.filesId = res.data.obj;
-        }
-      });
+    getCallback(data){
+         data = eval("(" + data + ")");
+         this.sendData.filesId += data.obj + ","
     },
     save() {
       this.sendData.id = this.id;

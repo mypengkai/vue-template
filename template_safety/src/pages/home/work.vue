@@ -18,7 +18,6 @@
       <!-- 宫格 -->
       <van-grid :column-num="3">
         <van-grid-item icon="home-o" text="待办事项" to="/wait" />
-        <!-- <van-grid-item icon="flag-o" text="计划检查" /> -->
         <van-grid-item icon="photo-o" text="自主检查" to="/self" />
         <van-grid-item icon="apps-o" text="整改" to="/reform" />
         <van-grid-item icon="eye-o" text="复核" to="recheck" />
@@ -28,6 +27,7 @@
   </div>
 </template>
 <script>
+import "@/api/request";
 export default {
   data() {
     return {};
