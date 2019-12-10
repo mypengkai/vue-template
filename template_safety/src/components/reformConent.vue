@@ -66,7 +66,7 @@ export default {
       },
       fileList: {
         files: [],
-        type: "SafetyPatrol" // 安全
+        type: "SafetyReply" // 安全
       }
     };
   },
