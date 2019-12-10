@@ -21,7 +21,6 @@
       <van-cell title="指定整改人" :value="item.srUserName" />
       <!-- 循环组件 -->
       <reformLoop :loopConent="item.Reply"></reformLoop>
-
       <div v-if="$store.state.userID==item.srUserId && item.type==0">
         <van-cell-group>
           <van-cell title="整改说明">
