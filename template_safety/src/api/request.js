@@ -18,12 +18,10 @@ server.interceptors.request.use(config => {
     if (config.method === 'get') {
         config.data = {
             ...config.data
-        } 
+        };
         config.params = {
             ...config.params
-        }
-
-
+        };
     }
     return config
 }, error => {
