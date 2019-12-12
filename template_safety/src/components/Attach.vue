@@ -28,13 +28,15 @@
 <script>
 import { openCamera } from "@/units/camera";
 import getUrl from "../api/baseUrl";
+let task = null;
 export default {
   data() {
     return {
       showAction: false,
       myItemsOnlyImage: [{ name: "拍照" }, { name: "从相册中选" }],
       showVideo: false,
-      selectedMediaNum: 0
+      selectedMediaNum: 0,
+      task: ""
     };
   },
   props: {
@@ -130,11 +132,13 @@ export default {
         }
       );
     },
+   
+
     //文件上传
     uploadFile(path) {
       //开始上传
       var url = getUrl.baseUrl + this.uploadFilePath;
-      var task = plus.uploader.createUpload(
+      task = plus.uploader.createUpload(
         url,
         { method: "POST", blocksize: 204800, priority: 100 },
         (upload, status) => {

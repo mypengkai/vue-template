@@ -69,7 +69,7 @@ function getImage(mediaNum) {
 		}
 	})
 }
-
+// 封装分类
 function cameraPlusReady(type, mediaNum) {
 	// 获取摄像头目录对象
 	plus.io.resolveLocalFileSystemURL('_doc/', function (entry) {
@@ -85,15 +85,6 @@ function cameraPlusReady(type, mediaNum) {
 	}, function (e) {
 		console.log('Resolve "_doc/" failed: ' + e.message);
 	});
-}
-
-export const openCamera = function (type, mediaNum, callback) {
-	back = callback;
-	if (window.plus) {
-		cameraPlusReady(type, mediaNum);
-	} else {
-		document.addEventListener('plusready', cameraPlusReady(type), false);
-	}
 }
 
 //转换为BLOB对象
@@ -121,4 +112,14 @@ function compressImage(src, fileName, cb) {
 			cb(src)
 			console.log("Compress error!");
 		});
+}
+
+//导出
+export const openCamera = function (type, mediaNum, callback) {
+	back = callback;
+	if (window.plus) {
+		cameraPlusReady(type, mediaNum);
+	} else {
+		document.addEventListener('plusready', cameraPlusReady(type), false);
+	}
 }

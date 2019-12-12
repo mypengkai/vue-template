@@ -4,7 +4,7 @@
     <van-nav-bar title="上海同望信息技术有限公司" fixed />
     <!-- 轮播 -->
     <div class="conent">
-      <van-swipe :autoplay="3000" indicator-color="white" :height="120">
+      <van-swipe :autoplay="3000" indicator-color="white" style="width:100%;height:3rem">
         <van-swipe-item>
           <img src="../../assets/swiper.jpg" alt />
         </van-swipe-item>
@@ -38,6 +38,7 @@ export default {
 img {
   width: 100%;
   height: 100%;
+  display: block;
 }
 .conent {
   margin-top: 46px;

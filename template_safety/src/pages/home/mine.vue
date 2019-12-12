@@ -49,9 +49,6 @@ export default {
 
     //点击检查版本
     checkUpload() {
-      // checkVersion(() => {
-      //   this.$toast("暂无最新版本");
-      // });
       checkVersion();
     },
     //获取当前版本号

@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view v-if="isRouterAlive" />
+    <transition name="transitionRouter">
+      <router-view v-if="isRouterAlive" />
+    </transition>
   </div>
 </template>
 
@@ -17,6 +19,7 @@ export default {
       isRouterAlive: true
     };
   },
+
   methods: {
     reload() {
       this.isRouterAlive = false;
@@ -33,5 +36,13 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.transitionRouter-enter-active,
+.transitionRouter-leave-active {
+  transition: all 0.5s;
+}
+.transitionRouter-enter,
+.transitionRouter-leave {
+  transform: translate3d(100%, 0, 0);
 }
 </style>

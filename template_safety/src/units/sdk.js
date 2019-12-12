@@ -2,12 +2,8 @@
 //版本更新
 import axios from "axios"
 import Qs from "qs"
-const url = {
-    androidAppKey: "b6c1f4ff0c4bfa9003308b697d9228aa",         // app在蒲公英平台的key
-    iosAppKey: '37a3f92e6b4ee1abd3e9da3445f0c1a2',
-    apikey: "6f64b96f63321b990c95251da589cd58",               // 蒲公英api key
-    check: "https://www.pgyer.com/apiv2/app/check"           // 蒲公英更新url
-}
+import url from "../api/baseUrl"
+
 function versionready() {
     let buildVersion = plus.runtime.version; // 客户端版本号
     let platform = plus.os.name; // 操作系统名称

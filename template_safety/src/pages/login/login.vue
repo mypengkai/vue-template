@@ -64,7 +64,11 @@ export default {
               uuid: res.uuid,
               phoneType: res.phoneType
             })
-            .then(res => {});
+            .then(res => {
+              if (res.data.ok) {
+                //this.$router.push("/");
+              }
+            });
         });
       }
     }
