@@ -21,6 +21,7 @@
         <van-grid-item icon="photo-o" text="自主检查" to="/self" />
         <van-grid-item icon="apps-o" text="整改" to="/reform" />
         <van-grid-item icon="eye-o" text="复核" to="recheck" />
+        <van-grid-item icon="flag-o" text="痕迹" to="trace" />
         <van-grid-item icon="scan" text="签到" to="scan" />
       </van-grid>
     </div>

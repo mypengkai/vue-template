@@ -1,0 +1,13 @@
+ 
+ {
+     "array":[
+        {"name":"jay","state":true},
+        {"name":"ceh","state":true},
+        {"name":"ddd","state":false},
+        {"name":"bbq","state":true},
+        {"name":"liu","state":false},
+        {"name":"jun","state":true}
+     ]
+ }
+     
+ 

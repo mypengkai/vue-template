@@ -28,7 +28,7 @@
           <li>
             是否逾期：
             <span v-if="item.overdue ==1" style="color:#ed1941;">逾期</span>
-            <span v-if="item.overdue ==null" style="color:#45b97c;">未逾期</span>
+            <span v-if="item.overdue ==null || item.overdue ==0" style="color:#45b97c;">未逾期</span>
           </li>
           <li>未完成数量/已完成数量({{item.unfinish}}/{{item.finish}})</li>
         </ul>

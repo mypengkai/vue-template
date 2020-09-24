@@ -6,7 +6,7 @@
 <script>
 import vueGiantTree from "vue-giant-tree";
 import banck from "@/api/banch";
-//import filterTree from "@/units/trees";
+
 export default {
   components: { vueGiantTree },
   data() {

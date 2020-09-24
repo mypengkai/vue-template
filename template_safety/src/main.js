@@ -7,6 +7,7 @@ import router from './router'
 import Vant from 'vant';
 import 'vant/lib/index.css';
 Vue.use(Vant);
+//vuex
 import store from "./store/store"
 //物理退出
 import "@/units/backApp"
@@ -17,6 +18,7 @@ Vue.use(Viewer)
 Viewer.setDefaults({
   Options: { 'inline': true, 'button': true, 'navbar': true, 'title': true, 'toolbar': true, 'tooltip': true, 'movable': true, 'zoomable': true, 'rotatable': true, 'scalable': true, 'transition': true, 'fullscreen': true, 'keyboard': true, 'url': 'data-source' }
 })
+//rem 自适应
 import "@/units/rem"
 
 Vue.config.productionTip = false
@@ -24,13 +26,13 @@ Vue.config.productionTip = false
 //路由拦截
 router.beforeEach((to, from, next) => {
   if (store.state.token) {
-      next()
+    next()
   } else {
-      if (to.path != "/login") {
-          next({ path: "/login" })
-      } else {
-          next()
-      }
+    if (to.path != "/login") {
+      next({ path: "/login" })
+    } else {
+      next()
+    }
   }
 })
 

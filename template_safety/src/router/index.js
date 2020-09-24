@@ -55,9 +55,9 @@ export default new Router({
       component: () => import("@/pages/wait/waitDetails")
     },
     {
-      path:"/startWait",
-      name:'startWait',
-      component:()=>import("@/pages/wait/startWait")
+      path: "/startWait",
+      name: 'startWait',
+      component: () => import("@/pages/wait/startWait")
     },
     //自主检查
     {
@@ -77,31 +77,42 @@ export default new Router({
     },
     //整改
     {
-      path:"/reform",
-      name:"reform",
-      component:()=>import("@/pages/reform/index")
+      path: "/reform",
+      name: "reform",
+      component: () => import("@/pages/reform/index")
     },
     {
-      path:"/reformDetails",
-      name:"reformDetails",
-      component:()=>import("@/pages/reform/reformDetails")
+      path: "/reformDetails",
+      name: "reformDetails",
+      component: () => import("@/pages/reform/reformDetails")
     },
     //复核
     {
-      path:"/recheck",
-      name:"recheck",
-      component:()=>import("@/pages/recheck/index")
+      path: "/recheck",
+      name: "recheck",
+      component: () => import("@/pages/recheck/index")
     },
     {
-      path:"/recheckDetails",
-      name:"recheckDetails",
-      component:()=>import("@/pages/recheck/recheckDetails")
+      path: "/recheckDetails",
+      name: "recheckDetails",
+      component: () => import("@/pages/recheck/recheckDetails")
+    },
+    //痕迹
+    {
+      path: "/trace",
+      name: "trace",
+      component: () => import("@/pages/trace/index")
+    },
+    {
+      path: "/traceDetail",
+      name: "traceDetail",
+      component: () => import("@/pages/trace/traceDetail")  
     },
     // 扫一扫
     {
-      path:"/scan",
-      name:"scan",
-      component:()=>import("@/pages/scan/scan")
+      path: "/scan",
+      name: "scan",
+      component: () => import("@/pages/scan/scan")
     }
   ]
 })
