@@ -11,10 +11,11 @@ function filterTree(treeData = [], options = { id, pid }) {
         if (el[options.pid] == '' || el[options.pid] == null) {
             tree.push(el)
         } else {
-            //查询子节点
+            //查询子节点  findIndex 满足条件返回下标  
             let index = treeData.findIndex(item => {
                 return item[options.id] == el[options.pid]
             })
+            // 不满足条件 返回 -1
             if (index !== -1) {
                 treeData[index].children = treeData[index].children || []
                 treeData[index].children.push(el)

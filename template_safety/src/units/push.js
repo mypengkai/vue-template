@@ -71,4 +71,3 @@ export const messagePush = function (type, content, payload, title, callback) {
         document.addEventListener('plusready', messagePushReady(type, content, payload, title), false);
     }
 }
-
